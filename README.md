@@ -1,2 +1,3 @@
 # calculatorjs
-A calculator
+
+A calculator. Made as one of the projects for the odin project.
