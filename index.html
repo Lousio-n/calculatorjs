@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans" rel="stylesheet">
   <script defer src="/main.js"></script>
   <title>Calculator</title>
 </head>
+
 <body>
   <div class="main-container">
-    <h1>Hello there! Here will be a calculator.</h1>
+    <div class="calculator-main">
+      <div class="calculation-output" id="calculation-output"></div>
+      <input type="number" name="calculator-input" id="calculator-input" class="calculator-input">
+      <div class="erase-undo-buttons">
+        <button id="reset-button">reset</button>
+        <button id="undo-button">undo</button>
+      </div>
+      <div class="main-calclator-buttons">
+        <div class="numeric-buttons">
+          <button class="number-input">7</button>
+          <button class="number-input">8</button>
+          <button class="number-input">9</button>
+          <button class="number-input">4</button>
+          <button class="number-input">5</button>
+          <button class="number-input">6</button>
+          <button class="number-input">1</button>
+          <button class="number-input">2</button>
+          <button class="number-input">3</button>
+          <button class="number-input">0</button>
+          <button class="operator-input">.</button>
+        </div>
+        <div class="operator-buttons">
+          <button class="operator-input">/</button>
+          <button class="operator-input">*</button>
+          <button class="operator-input">-</button>
+          <button class="operator-input">+</button>
+          <button class="operator-input">=</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>

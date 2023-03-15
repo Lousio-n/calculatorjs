@@ -1,0 +1,5 @@
+
+
+function operate(newNum, lastNum) {
+
+}

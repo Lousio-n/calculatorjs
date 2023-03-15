@@ -12,6 +12,13 @@ body {
   height: 100%;
   background-color: var(--main-bg-color);
   color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+button {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .main-container {
@@ -19,4 +26,48 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.calculator-main {
+  height: 600px;
+  width: 450px;
+  background-color: var(--lighter-gray);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}
+
+.main-calclator-buttons {
+  display: flex;
+}
+
+.numeric-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.operator-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.operator-input,
+.number-input {
+  height: 50px;
+  width: 60px;
+}
+
+.calculation-output {
+  background-color: var(--cyan);
+  height: 80px;
+  width: 100%;
+}
+
+.calculator-input {
+  height: 50px;
+  width: 100%;
+  margin-bottom: auto;
 }
