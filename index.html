@@ -15,7 +15,7 @@
   <div class="main-container">
     <div class="calculator-main">
       <div class="calculation-output" id="calculation-output"></div>
-      <input type="number" name="calculator-input" id="calculator-input" class="calculator-input">
+      <div class="calculation-input" id="calculation-input"></div>
       <div class="erase-undo-buttons">
         <button id="reset-button">reset</button>
         <button id="undo-button">undo</button>
@@ -32,14 +32,14 @@
           <button class="number-input">2</button>
           <button class="number-input">3</button>
           <button class="number-input">0</button>
-          <button class="operator-input">.</button>
+          <button class="number-input">.</button>
+          <button class="operator-equals" id="equals">=</button>
         </div>
         <div class="operator-buttons">
-          <button class="operator-input">/</button>
-          <button class="operator-input">*</button>
-          <button class="operator-input">-</button>
-          <button class="operator-input">+</button>
-          <button class="operator-input">=</button>
+          <button class="operator-input" id="divide">/</button>
+          <button class="operator-input" id="multiply">*</button>
+          <button class="operator-input" id="subtract">-</button>
+          <button class="operator-input" id="addition">+</button>
         </div>
       </div>
     </div>

@@ -29,8 +29,8 @@ button {
 }
 
 .calculator-main {
-  height: 600px;
-  width: 450px;
+  height: 500px;
+  width: 400px;
   background-color: var(--lighter-gray);
   border-radius: 20px;
   display: flex;
@@ -46,11 +46,14 @@ button {
 
 .numeric-buttons {
   display: grid;
+  gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .operator-buttons {
   display: grid;
+  gap: 10px;
+  margin-left: 10px;
   grid-template-columns: 1fr;
 }
 
@@ -66,8 +69,10 @@ button {
   width: 100%;
 }
 
-.calculator-input {
+.calculation-input {
+  background-color: blue;
   height: 50px;
   width: 100%;
   margin-bottom: auto;
+  text-align: right;
 }
