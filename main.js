@@ -3,7 +3,6 @@ const operators = document.querySelectorAll(".operator-input");
 const equals = document.getElementById("equals");
 const calculatorDisplay = document.getElementById("calculator-display");
 const resetButton = document.getElementById("reset-button");
-const undoButton = document.getElementById("undo-button");
 
 let operatorToUse;
 let operatorClickedStatus = false;
@@ -17,13 +16,6 @@ function clearCalculatorDisplay() {
   numberA = "";
   numberB = "";
   calculatedNumber = undefined;
-};
-
-function clearInput() {
-  calculatorDisplay.textContent = "";
-  operatorClickedStatus = false;
-  numberA = "";
-  numberB = "";
 };
 
 function operate(a, b) {
@@ -40,13 +32,6 @@ const numberClicked = numbers.forEach(number => {
     } else {
       numberB += e.target.textContent;
     }
-
-    console.log(numberA, numberB);
-/* 
-    if (calculatedNumber !== undefined) {
-      calculatorDisplay.textContent = "";
-      calculatedNumber = undefined;
-    }  */
     calculatorDisplay.textContent += e.target.textContent;
   });
 });
@@ -72,8 +57,4 @@ equals.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () => {
   clearCalculatorDisplay();
-});
-
-undoButton.addEventListener("click", () => {
-  clearInput();
 });
