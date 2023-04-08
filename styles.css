@@ -11,7 +11,7 @@ html,
 body {
   height: 100%;
   background-color: var(--main-bg-color);
-  color: var(--text-color);
+  color: var(--main-bg-color);
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -33,6 +33,7 @@ button {
   width: 400px;
   background-color: var(--lighter-gray);
   border-radius: 20px;
+  border: 3px solid var(--purple);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -63,16 +64,13 @@ button {
   width: 60px;
 }
 
-.calculation-output {
+.calculator-display {
   background-color: var(--cyan);
   height: 80px;
   width: 100%;
-}
-
-.calculation-input {
-  background-color: blue;
-  height: 50px;
-  width: 100%;
   margin-bottom: auto;
-  text-align: right;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
