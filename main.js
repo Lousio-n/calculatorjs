@@ -57,6 +57,7 @@ const numberClicked = numbers.forEach(number => {
     } else {
       numberB += e.target.textContent;
     }
+    calculatorDisplay.textContent += e.target.textContent;
   });
 });
 
