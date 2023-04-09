@@ -1,6 +1,7 @@
 const numbers = document.querySelectorAll(".number-input");
 const operators = document.querySelectorAll(".operator-input");
 const equals = document.getElementById("equals");
+const decimal = document.getElementById("decimal");
 const calculatorDisplay = document.getElementById("calculator-display");
 const resetButton = document.getElementById("reset-button");
 
@@ -32,19 +33,30 @@ function operate(a, b) {
   if (operatorToUse === '/') return a / b;
 };
 
+function clearCurrentDisplayNumber() {
+  if (operatorClickedStatus === true && numberB === "") {
+    calculatorDisplay.textContent = "";
+  }
+}
+
+decimal.addEventListener('click', (e) => {
+  if (!numberA.toString().includes(".") && operatorClickedStatus === false) {
+    numberA += e.target.textContent
+    calculatorDisplay.textContent += e.target.textContent;
+  } else if (!numberB.includes(".") && operatorClickedStatus === true) {
+    numberB += e.target.textContent
+    calculatorDisplay.textContent += e.target.textContent;
+  };
+})
+
 const numberClicked = numbers.forEach(number => {
   number.addEventListener("click", (e) => {
+    clearCurrentDisplayNumber();
     if (operatorClickedStatus === false) {
       numberA += e.target.textContent;
     } else {
       numberB += e.target.textContent;
     }
-    if (calculatorDisplay.textContent.includes(".") 
-    && e.target.textContent === ".") {
-      e.preventDefault();
-    } else {
-      calculatorDisplay.textContent += e.target.textContent;
-    };
   });
 });
 
@@ -53,7 +65,6 @@ const operatorClicked = operators.forEach(operator => {
     operatorClickedStatus = true;
     if (numberB !== "") startOperate();
     operatorToUse = e.target.textContent;
-    calculatorDisplay.textContent += ` ${e.target.textContent} `;
   });
 });
 
