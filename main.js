@@ -39,7 +39,12 @@ const numberClicked = numbers.forEach(number => {
     } else {
       numberB += e.target.textContent;
     }
-    calculatorDisplay.textContent += e.target.textContent;
+    if (calculatorDisplay.textContent.includes(".") 
+    && e.target.textContent === ".") {
+      e.preventDefault();
+    } else {
+      calculatorDisplay.textContent += e.target.textContent;
+    };
   });
 });
 
@@ -52,8 +57,10 @@ const operatorClicked = operators.forEach(operator => {
   });
 });
 
-equals.addEventListener("click", () => {
-  startOperate();
+equals.addEventListener("click", (e) => {
+  if (operatorClickedStatus === false || numberB === "") {
+    e.preventDefault();
+  } else startOperate();
 });
 
 resetButton.addEventListener("click", () => {
