@@ -18,6 +18,13 @@ function clearCalculatorDisplay() {
   calculatedNumber = undefined;
 };
 
+function startOperate() {
+  calculatedNumber = operate(+numberA, +numberB);
+  calculatorDisplay.textContent = calculatedNumber;
+  numberA = calculatedNumber;
+  numberB = "";
+}
+
 function operate(a, b) {
   if (operatorToUse === '+') return a + b;
   if (operatorToUse === '-') return a - b;
@@ -39,20 +46,14 @@ const numberClicked = numbers.forEach(number => {
 const operatorClicked = operators.forEach(operator => {
   operator.addEventListener("click", (e) => {
     operatorClickedStatus = true;
-    if (calculatedNumber !== undefined) {
-      numberA = calculatedNumber;
-      calculatorDisplay.textContent = numberA;
-    }
+    if (numberB !== "") startOperate();
     operatorToUse = e.target.textContent;
     calculatorDisplay.textContent += ` ${e.target.textContent} `;
   });
 });
 
 equals.addEventListener("click", () => {
-  calculatedNumber = operate(+numberA, +numberB);
-  calculatorDisplay.textContent = calculatedNumber;
-  numberA = "";
-  numberB = "";
+  startOperate();
 });
 
 resetButton.addEventListener("click", () => {
