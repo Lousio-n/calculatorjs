@@ -20,10 +20,14 @@ function clearCalculatorDisplay() {
 };
 
 function startOperate() {
+  if (operatorToUse === "/" && numberA === "0" || numberB === "0") {
+    calculatorDisplay.textContent = "No dividing by zero!"
+  } else {
   calculatedNumber = operate(+numberA, +numberB);
   calculatorDisplay.textContent = calculatedNumber;
   numberA = calculatedNumber;
   numberB = "";
+  }
 }
 
 function operate(a, b) {
