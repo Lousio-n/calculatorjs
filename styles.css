@@ -5,6 +5,10 @@
   --purple-gray: #6272a4;
   --cyan: #8be9fd;
   --purple: #bd93f9;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
 }
 
 html,
@@ -19,13 +23,41 @@ button {
   font-size: 22px;
   font-weight: 700;
   cursor: pointer;
+  border: transparent;
+  border-radius: 8px;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+h1 {
+  color: var(--purple);
+  font-size: 46px;
+  margin-top: 0;
 }
 
 .main-container {
   display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.calculator-display {
+  background-color: var(--cyan);
+  height: 80px;
+  min-width: 390px;
+  margin-bottom: auto;
+  font-family: 'Calculator', sans-serif;
+  font-size: 46px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 8px;
+  padding-right: 10px;
 }
 
 .calculator-main {
@@ -41,8 +73,22 @@ button {
   padding: 16px;
 }
 
-.main-calclator-buttons {
+.main-calculator-buttons {
   display: flex;
+  margin-bottom: 18px;
+}
+
+.reset-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.reset-button {
+  width: 88%;
+  height: 50px;
+  background-color: var(--red);
 }
 
 .numeric-buttons {
@@ -58,19 +104,24 @@ button {
   grid-template-columns: 1fr;
 }
 
-.operator-input,
 .number-input {
-  height: 50px;
-  width: 60px;
+  background-color: var(--purple-gray);
 }
 
-.calculator-display {
-  background-color: var(--cyan);
-  height: 80px;
-  width: 100%;
-  margin-bottom: auto;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.operator-input {
+  background-color: var(--orange);
+}
+
+.operator-equals {
+  background-color: var(--yellow);
+}
+
+.number-decimal {
+  background-color: var(--pink);
+}
+
+.operator-input,
+.number-input {
+  height: 70px;
+  width: 80px;
 }
